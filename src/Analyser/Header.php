@@ -7,6 +7,9 @@ use WhichBrowser\Parser;
 
 trait Header
 {
+    private $data;
+    private $options;
+
     private function &analyseHeaders()
     {
         /* Analyse the main useragent header */
@@ -21,15 +24,15 @@ trait Header
         if ($header = $this->getHeader('X-Original-User-Agent')) {
             $this->additionalUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('X-Device-User-Agent')) {
             $this->additionalUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('Device-Stock-UA')) {
             $this->additionalUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('X-OperaMini-Phone-UA')) {
             $this->additionalUserAgent($header);
         }
@@ -37,37 +40,37 @@ trait Header
         if ($header = $this->getHeader('X-UCBrowser-Device-UA')) {
             $this->additionalUserAgent($header);
         }
-        
+
 
         /* Analyse browser specific headers */
 
         if ($header = $this->getHeader('X-OperaMini-Phone')) {
             $this->analyseOperaMiniPhone($header);
         }
-        
+
         if ($header = $this->getHeader('X-UCBrowser-Phone-UA')) {
             $this->analyseOldUCUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('X-UCBrowser-UA')) {
             $this->analyseNewUCUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('X-Puffin-UA')) {
             $this->analysePuffinUserAgent($header);
         }
-        
+
         if ($header = $this->getHeader('Baidu-FlyFlow')) {
             $this->analyseBaiduHeader($header);
         }
-        
+
 
         /* Analyse Android WebView browser ids */
 
         if ($header = $this->getHeader('X-Requested-With')) {
             $this->analyseBrowserId($header);
         }
-        
+
 
         /* Analyse WAP profile header */
 
@@ -129,7 +132,7 @@ trait Header
             if (isset($extra->os->name)) {
                 $this->data->os = $extra->os;
             }
-            
+
             if ($extra->device->identified) {
                 $this->data->device = $extra->device;
             }

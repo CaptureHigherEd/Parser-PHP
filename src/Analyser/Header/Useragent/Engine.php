@@ -6,6 +6,8 @@ use WhichBrowser\Model\Version;
 
 trait Engine
 {
+    private $data;
+
     private function &detectEngine($ua)
     {
         $this->detectWebkit($ua);

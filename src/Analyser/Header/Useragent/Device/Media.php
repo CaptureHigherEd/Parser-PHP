@@ -7,6 +7,8 @@ use WhichBrowser\Model\Version;
 
 trait Media
 {
+    private $data;
+
     private function detectMedia($ua)
     {
         if (!preg_match('/(Archos|Zune|Walkman)/ui', $ua)) {

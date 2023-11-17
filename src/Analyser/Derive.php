@@ -9,6 +9,8 @@ use WhichBrowser\Model\Version;
 
 trait Derive
 {
+    private $data;
+
     private function &deriveInformation()
     {
         if (isset($this->data->device->flag)) {

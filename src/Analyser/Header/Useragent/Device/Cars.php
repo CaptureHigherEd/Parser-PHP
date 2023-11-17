@@ -6,6 +6,8 @@ use WhichBrowser\Constants;
 
 trait Cars
 {
+    private $data;
+
     private function detectCars($ua)
     {
         if (!preg_match('/Car/ui', $ua)) {

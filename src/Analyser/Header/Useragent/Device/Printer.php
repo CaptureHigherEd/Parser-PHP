@@ -6,6 +6,8 @@ use WhichBrowser\Constants;
 
 trait Printer
 {
+    private $data;
+
     private function detectPrinter($ua)
     {
         if (!preg_match('/(TASKalfa|CanonIJCL|IR-S|PrintSmart|EpsonHello)/ui', $ua)) {

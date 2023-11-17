@@ -7,6 +7,8 @@ use WhichBrowser\Model\Version;
 
 trait Gaming
 {
+    private $data;
+
     private function detectGaming($ua)
     {
         if (!preg_match('/(Nintendo|Nitro|PlayStation|PS[0-9]|Sega|Dreamcast|Xbox)/ui', $ua)) {
@@ -251,7 +253,7 @@ trait Gaming
                 'type'          =>  Constants\DeviceType::GAMING,
                 'subtype'       =>  Constants\DeviceSubType::CONSOLE
             ]);
-        
+
         /* Xbox 360 */
         } elseif (preg_match('/Xbox\)$/u', $ua, $match)) {
             $this->data->os->reset();

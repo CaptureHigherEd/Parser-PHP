@@ -9,6 +9,8 @@ use WhichBrowser\Model\Version;
 
 trait Os
 {
+    private $data;
+
     private function &detectOperatingSystem($ua)
     {
         $this->detectUnix($ua);
@@ -99,7 +101,7 @@ trait Os
             }
         } elseif (preg_match('/Mac OS X/u', $ua) || preg_match('/;os=Mac/u', $ua)) {
             /* OS X */
-            
+
             $this->data->os->name = 'OS X';
 
             if (preg_match('/Mac OS X (1[0-9][0-9\._]*)/u', $ua, $match)) {
@@ -1377,7 +1379,7 @@ trait Os
         if (preg_match('/Symbian/u', $ua)) {
             $this->data->os->family = new Family([ 'name' => 'Symbian' ]);
             $this->data->device->type = Constants\DeviceType::MOBILE;
-            
+
             if (preg_match('/SymbianOS\/([0-9.]*)/u', $ua, $match)) {
                 $this->data->os->family->version = new Version([ 'value' => $match[1] ]);
             }

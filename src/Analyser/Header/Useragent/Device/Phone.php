@@ -8,6 +8,8 @@ use WhichBrowser\Model\Version;
 
 trait Phone
 {
+    private $data;
+
     private function detectPhone($ua)
     {
         $this->detectNttTeless($ua);

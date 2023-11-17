@@ -7,6 +7,8 @@ use WhichBrowser\Constants;
 
 class UCBrowserOld
 {
+    private $data;
+
     public function __construct($header, &$data)
     {
         $this->data =& $data;
@@ -26,7 +28,7 @@ class UCBrowserOld
         $this->data->engine->reset([ 'name' => 'Gecko' ]);
 
         $extra = new Parser([ 'headers' => [ 'User-Agent' => $header ]]);
-        
+
         if ($extra->device->type != Constants\DeviceType::DESKTOP) {
             if ($extra->os->getName() !== '' && ($this->data->os->getName() === '' || $extra->os->getVersion() !== '')) {
                 $this->data->os = $extra->os;

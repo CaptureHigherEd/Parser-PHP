@@ -9,6 +9,8 @@ use WhichBrowser\Model\Version;
 
 class BrowserId
 {
+    private $data;
+
     public function __construct($header, &$data)
     {
         if ($header == 'XMLHttpRequest') {
@@ -60,7 +62,7 @@ class BrowserId
         }
 
         /* The X-Requested-With header is send by the WebKit or Chromium Webview */
-        
+
         if (!isset($this->data->engine->name) || ($this->data->engine->name != 'Webkit' && $this->data->engine->name != 'Blink')) {
             $this->data->engine->name = 'Webkit';
             $this->data->engine->version = null;

@@ -7,6 +7,8 @@ use WhichBrowser\Data;
 
 trait Television
 {
+    private $data;
+
     private function detectTelevision($ua)
     {
         /* Detect the type based on some common markers */
@@ -134,7 +136,7 @@ trait Television
                 $this->data->device->series = 'NetCast TV';
             } else {
                 $this->data->device->series = 'webOS TV';
-                
+
                 $this->data->os->reset([
                     'name'   => 'webOS',
                     'hidden' => true
@@ -615,7 +617,7 @@ trait Television
 
             $this->data->device->manufacturer = 'Roku';
             $this->data->device->type = Constants\DeviceType::TELEVISION;
-            
+
             $models = [
                 '2000'  => 'HD',
                 '2050'  => 'XD',
@@ -659,7 +661,7 @@ trait Television
 
             if (!empty($match[1]) || !empty($match[2])) {
                 $model = !empty($match[1]) ? $match[1] : $match[2];
-                
+
                 if (isset($models[$model])) {
                     $this->data->device->model = $models[$model];
                     $this->data->device->generic = false;
@@ -1032,7 +1034,7 @@ trait Television
                                 break;
                             default:
                                 $this->data->device->model = $modelName;
-        
+
                                 if (substr($modelName, 0, 4) == 'DIGA') {
                                     $this->data->device->series = 'Diga';
                                     $this->data->device->model = null;

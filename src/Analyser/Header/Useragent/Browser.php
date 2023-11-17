@@ -10,6 +10,8 @@ use WhichBrowser\Model\Version;
 
 trait Browser
 {
+    private $data;
+
     private function &detectBrowser($ua)
     {
         /* Detect major browsers */
@@ -700,7 +702,7 @@ trait Browser
             $this->data->browser->version = new Version([ 'value' => $match[1], 'details' => 2 ]);
             $this->data->browser->type = Constants\BrowserType::BROWSER;
         }
-      
+
         if (preg_match('/OPRGX\/([0-9.]*)$/u', $ua, $match)) {
             $this->data->browser->stock = false;
             $this->data->browser->name = 'Opera GX';
@@ -2010,7 +2012,7 @@ trait Browser
             $this->data->browser->version = new Version([ 'value' => $match[1], 'details' => 2 ]);
             $this->data->browser->type = Constants\BrowserType::BROWSER;
         }
-        
+
         /* Xiaomi MIUI Browser */
 
         if (preg_match('/MiuiBrowser\/([0-9.]*)/u', $ua, $match)) {

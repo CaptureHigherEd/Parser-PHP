@@ -8,6 +8,8 @@ use WhichBrowser\Model\Version;
 
 trait Tablet
 {
+    private $data;
+
     private function detectTablet($ua)
     {
         $this->detectWebTab($ua);

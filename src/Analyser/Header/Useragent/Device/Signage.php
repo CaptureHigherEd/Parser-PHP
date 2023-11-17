@@ -6,6 +6,8 @@ use WhichBrowser\Constants;
 
 trait Signage
 {
+    private $data;
+
     private function detectSignage($ua)
     {
         if (!preg_match('/(BrightSign|ADAPI)/ui', $ua)) {
