@@ -7,8 +7,6 @@ use WhichBrowser\Model\Version;
 
 trait Gaming
 {
-    private $data;
-
     private function detectGaming($ua)
     {
         if (!preg_match('/(Nintendo|Nitro|PlayStation|PS[0-9]|Sega|Dreamcast|Xbox)/ui', $ua)) {

@@ -7,8 +7,6 @@ use WhichBrowser\Data;
 
 trait Television
 {
-    private $data;
-
     private function detectTelevision($ua)
     {
         /* Detect the type based on some common markers */

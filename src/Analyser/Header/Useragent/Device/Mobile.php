@@ -9,8 +9,6 @@ use WhichBrowser\Model\Version;
 
 trait Mobile
 {
-    private $data;
-
     private function detectMobile($ua)
     {
         /* Detect the type based on some common markers */

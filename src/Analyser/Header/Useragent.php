@@ -2,11 +2,13 @@
 
 namespace WhichBrowser\Analyser\Header;
 
+use WhichBrowser\Model\Main;
+
 class Useragent
 {
     use Useragent\Os, Useragent\Device, Useragent\Browser, Useragent\Application, Useragent\Using, Useragent\Engine, Useragent\Bot;
 
-    private $data;
+    private Main $data;
     private $options;
 
     public function __construct($header, &$data, &$options)

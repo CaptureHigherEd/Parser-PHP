@@ -7,8 +7,6 @@ use WhichBrowser\Data;
 
 trait Bot
 {
-    private $data;
-
     private function &detectBot($ua)
     {
         /* Detect bots based on url in the UA string */

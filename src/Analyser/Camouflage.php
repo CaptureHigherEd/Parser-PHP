@@ -8,9 +8,6 @@ use WhichBrowser\Model\Version;
 
 trait Camouflage
 {
-    private $data;
-    private $options;
-
     private function &detectCamouflage()
     {
         if ($ua = $this->getHeader('User-Agent')) {

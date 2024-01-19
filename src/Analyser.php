@@ -9,7 +9,7 @@ class Analyser
 {
     use Analyser\Header, Analyser\Derive, Analyser\Corrections, Analyser\Camouflage;
 
-    private $data;
+    private ?Main $data = null;
 
     private $options;
 
@@ -21,7 +21,7 @@ class Analyser
         $this->options = (object) $options;
     }
 
-    public function setData(&$data)
+    public function setData(Main &$data)
     {
         $this->data =& $data;
     }

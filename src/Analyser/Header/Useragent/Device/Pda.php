@@ -9,8 +9,6 @@ use WhichBrowser\Model\Version;
 
 trait Pda
 {
-    private $data;
-
     private function detectPda($ua)
     {
         if (!preg_match('/(CASIO|Palm|Psion|pdQ|COM|airboard|sharp|pda|POCKET-E|OASYS|NTT\/PI)/ui', $ua)) {

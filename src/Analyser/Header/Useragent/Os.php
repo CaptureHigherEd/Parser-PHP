@@ -9,8 +9,6 @@ use WhichBrowser\Model\Version;
 
 trait Os
 {
-    private $data;
-
     private function &detectOperatingSystem($ua)
     {
         $this->detectUnix($ua);

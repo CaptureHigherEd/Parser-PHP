@@ -6,8 +6,6 @@ use WhichBrowser\Constants;
 
 trait Ereader
 {
-    private $data;
-
     private function detectEreader($ua)
     {
         if (!preg_match('/(Kindle|Nook|Bookeen|Kobo|EBRD|PocketBook|Iriver)/ui', $ua)) {

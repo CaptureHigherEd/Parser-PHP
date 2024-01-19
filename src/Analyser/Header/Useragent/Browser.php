@@ -10,8 +10,6 @@ use WhichBrowser\Model\Version;
 
 trait Browser
 {
-    private $data;
-
     private function &detectBrowser($ua)
     {
         /* Detect major browsers */

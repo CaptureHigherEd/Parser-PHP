@@ -6,8 +6,6 @@ use WhichBrowser\Model\Version;
 
 trait Using
 {
-    private $data;
-
     private function &detectUsing($ua)
     {
         if (!preg_match('/(AdobeAIR|Awesomium|Embedded|bsalsa|Canvace|Ekioh|AtomShell|Electron|JavaFX|GFXe|luakit|Titanium|OpenWebKitSharp|Prism|Qt|Reqwireless|RhoSimulator|UWebKit|nw-tests|WebKit2)/ui', $ua)) {

@@ -6,8 +6,6 @@ use WhichBrowser\Constants;
 
 trait Gps
 {
-    private $data;
-
     private function detectGps($ua)
     {
         if (!preg_match('/Nuvi/ui', $ua)) {

@@ -7,8 +7,6 @@ use WhichBrowser\Model\Version;
 
 trait Corrections
 {
-    private $data;
-
     private function &applyCorrections()
     {
         if (isset($this->data->browser->name) && isset($this->data->browser->using)) {

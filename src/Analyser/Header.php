@@ -7,9 +7,6 @@ use WhichBrowser\Parser;
 
 trait Header
 {
-    private $data;
-    private $options;
-
     private function &analyseHeaders()
     {
         /* Analyse the main useragent header */

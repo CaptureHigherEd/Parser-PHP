@@ -14,6 +14,9 @@ class Os extends NameVersion
     /** @var string */
     public $edition;
 
+    /** @var string */
+    public $build;
+
     /** @var boolean */
     public $hidden = false;
 
@@ -92,7 +95,7 @@ class Os extends NameVersion
         if ($this->hidden) {
             return '';
         }
-        
+
         return trim($this->getName() .
             (!empty($this->version) && !$this->version->hidden ? ' ' . $this->getVersion() : '')) .
             (!empty($this->edition) ? ' ' . $this->edition : '');

@@ -6,8 +6,6 @@ use WhichBrowser\Constants;
 
 trait Appliance
 {
-    private $data;
-
     private function detectAppliance($ua)
     {
         $this->detectIOpener($ua);

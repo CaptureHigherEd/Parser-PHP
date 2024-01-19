@@ -8,8 +8,6 @@ trait Device
         Device\Mobile, Device\Media, Device\Television, Device\Signage,
         Device\Printer, Device\Tablet, Device\Phone, Device\Pda;
 
-    private $data;
-
     private function &detectDevice($ua)
     {
         $this->detectAppliance($ua);

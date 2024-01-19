@@ -70,7 +70,7 @@ class Main
     {
         $arguments = func_get_args();
         $x = $arguments[0];
-        
+
         if (count($arguments) < 2) {
             return false;
         }
@@ -78,11 +78,11 @@ class Main
         if (empty($this->$x->name)) {
             return false;
         }
-    
+
         if ($this->$x->name != $arguments[1]) {
             return false;
         }
-    
+
         if (count($arguments) >= 4) {
             if (empty($this->$x->version)) {
                 return false;
@@ -261,7 +261,7 @@ class Main
         $os = $this->os->toString();
         $engine = $this->engine->toString();
         $device = $this->device->toString();
-        
+
 
         if (empty($device) && empty($os) && $this->device->type == 'television') {
             $device = 'television';
@@ -271,7 +271,7 @@ class Main
             $device = 'emulator';
         }
 
-    
+
         if (!empty($browser) && !empty($os) && !empty($device)) {
             return $prefix . $browser . ' on ' . $this->a($device) . ' running ' . $os;
         }
@@ -307,7 +307,7 @@ class Main
         if ($this->browser->stock && !empty($engine) && empty($device)) {
             return 'an unknown browser based on ' . $engine;
         }
-        
+
         if ($this->device->type == 'bot') {
             return 'an unknown bot';
         }

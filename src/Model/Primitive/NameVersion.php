@@ -14,12 +14,12 @@ class NameVersion extends Base
      * @var string                          $name       The name
      */
     public $name;
-    
+
     /**
      * @var string                          $alias      An alternative name that is used for readable strings
      */
     public $alias;
-     
+
     /**
      * @var \WhichBrowser\Model\Version     $version    Version information
      */

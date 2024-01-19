@@ -10,8 +10,6 @@ use WhichBrowser\Model\Version;
 
 trait Application
 {
-    private $data;
-
     private function &detectApplication($ua)
     {
         /* Detect applications */
